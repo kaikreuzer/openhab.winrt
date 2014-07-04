@@ -1,0 +1,80 @@
+﻿<SettingsFlyout
+    x:Class="openhab.winrt.winhab.SettingsManager.WinHABSettingsFlyout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:openhab.winrt.winhab.SettingsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    IconSource="Assets/SmallLogo.png"
+    Title="winHAB Settings" Width="665">
+    <Grid Height="646" Width="285">
+        <Button x:Name="saveButton" Content="Save" Margin="7,584,0,28">
+            <Button.Flyout>
+                <Flyout>
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" Text="If you typed in Save, the App will close and your must Reststart the Applicion, to apply all Changes." Height="30" Width="274" Foreground="#FFFD0000">
+
+                        </TextBlock>
+                        <Button x:ConnectionId='8' x:Name="realySave"                           Content="Realy save?"></Button>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        <Button Content="Abort" HorizontalAlignment="Left" Margin="148,584,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="userNameTextBox" InputScope="AlphanumericFullWidth" HorizontalAlignment="Left" Margin="10,16,0,0"  Text="" VerticalAlignment="Top" Width="154" Background="#FF99A3E4"/>
+        <PasswordBox x:Name="passwordTextBox"  HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="154" Background="#FF99A3E4" />
+        <TextBox x:Name="urlTextBox" InputScope="Url" HorizontalAlignment="Left" Margin="10,164,0,0"  Text="" VerticalAlignment="Top" Width="265" Background="#FF99A3E4"/>
+        <TextBox x:ConnectionId='1' x:Name="portTextBox" InputScope="Number" HorizontalAlignment="Left" Margin="328,397,-197,0" Text="" VerticalAlignment="Top" Width="154" Background="White"                                                                    />
+        <TextBlock x:Name="userNameTextView" HorizontalAlignment="Left" Margin="10,-3,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
+        <TextBlock x:Name="passwordTextView" HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <CheckBox x:Name="savePasswordChbx" Content="Save password - Currently not implemented" HorizontalAlignment="Left" Margin="7,100,0,0" VerticalAlignment="Top" Width="278" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="42,127,0,0" TextWrapping="Wrap" Text="Currently password is always stored" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,146,0,0" TextWrapping="Wrap" Text="Full URL to JSON" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="328,379,-64,0" TextWrapping="Wrap" Text="Port" VerticalAlignment="Top"/>
+        <RichTextBlock HorizontalAlignment="Left" Height="121" Margin="10,201,0,0" VerticalAlignment="Top" Width="265">
+            <Paragraph>
+                <Run Text="Please configure the Mainsettings of your openHAB System in this Window. Type in the URL like this Format: http://subdomain.domain.tdl/path. In the following Step the Port will be read out of the Textbox automaticly. It's not neccesary to type it into the URL."/>
+            </Paragraph>
+        </RichTextBlock>
+        <ToggleSwitch x:ConnectionId='2' x:Name="expertViewSwitch" Header="Expertview" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top"                               />
+        <Grid x:Name="expertGrid" Margin="0,10,0,64">
+            <TextBlock HorizontalAlignment="Left" Margin="169,391,0,0" TextWrapping="Wrap" Text="Refreshtime" VerticalAlignment="Top"/>
+            <RichTextBlock x:ConnectionId='7' HorizontalAlignment="Left" Height="94" Margin="10,468,0,0" VerticalAlignment="Top" Width="265"                                                  >
+                <Paragraph>
+                    <Run Text="Please set only the Refreshtime away from default, if you know what you are doint. A Refreshtime under 5 Seconds can interrupt the Application. Make a longtap on each Item / Widget if the Debuggingmode is enabled to view some Systeminformations about the selected Item like ID, link, state etc." Foreground="#FFF90000" />
+                </Paragraph>
+            </RichTextBlock>
+            <CheckBox Content="Debuggingmode" HorizontalAlignment="Left" Margin="7,436,0,0" VerticalAlignment="Top"/>
+            <Slider x:Name="refreshTrackBar" HorizontalAlignment="Left" Margin="10,374,0,0" VerticalAlignment="Top" Width="100" Minimum="1" Maximum="300"/>
+            
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="649" Margin="315,-3,-316,0" VerticalAlignment="Top" Width="286">
+            <ComboBox x:ConnectionId='3' x:Name="connectionTypeChooser" HorizontalAlignment="Left" Margin="0,34,0,0" VerticalAlignment="Top" Width="286"                                                          >
+                <ComboBoxItem Content="HTTPS with Username &amp; Password"/>
+                <ComboBoxItem Content="HTTPS without Username &amp; Password"/>
+                <ComboBoxItem Content="HTTP with Username &amp; Password"/>
+                <ComboBoxItem Content="HTTP without Username and Password"/>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0,16,0,0" TextWrapping="Wrap" Text="Choose your prefered Connection" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,202,0,0" TextWrapping="Wrap" Text="If you are not shure, what your full URL to openHAB is, use this help" VerticalAlignment="Top"/>
+            <ComboBox x:Name="protocollChooser" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Width="154">
+                <ComboBoxItem Content="https"/>
+                <ComboBoxItem Content="http"/>
+            </ComboBox>
+            <TextBox x:Name="sitemapTextBox" HorizontalAlignment="Left" Margin="10,338,0,0"  Text="Sitemap" VerticalAlignment="Top" Width="154"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,265,0,0" TextWrapping="Wrap" Text="Protocoll" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" Text="Sitemap" VerticalAlignment="Top"/>
+            <Button x:ConnectionId='4' x:Name="generateURIButton" Content="Generate" HorizontalAlignment="Left" Margin="7,512,0,0" VerticalAlignment="Top" Width="119"                                  />
+            <TextBox x:Name="urlTextBox1" HorizontalAlignment="Left" Margin="10,468,0,0" TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Width="154" InputScope="Number"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,455,0,0" TextWrapping="Wrap" Text="URL like demo.openhab.org" VerticalAlignment="Top"/>
+            <CheckBox x:ConnectionId='5' x:Name="demoCheckbox" Content="Run in Demomode"                                                                   HorizontalAlignment="Left" Margin="7,238,0,0" VerticalAlignment="Top" Width="173"/>
+            <AppBarButton x:ConnectionId='6' x:Name="refreshImageCacheBtn"                                      HorizontalAlignment="Left" Label="Refresh Imagecache" Margin="157,511,0,0" VerticalAlignment="Top" Icon="Refresh"/>
+            <ProgressRing x:Name="delImagesProgressRing" HorizontalAlignment="Left" Margin="199,619,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+
+    <!-- Dieser StackPanel fungiert als vertikales Layout der Inhaltsabschnitte -->
+</SettingsFlyout>
+

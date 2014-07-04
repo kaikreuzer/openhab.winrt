@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{777F04F6-AE69-45CF-B99E-206FD6E2C933}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>openhab.winrt.winhab</RootNamespace>
+    <AssemblyName>openHAB</AssemblyName>
+    <DefaultLanguage>de-DE</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>openHAB_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_otherWidgets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="winrt\winhab\about\AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\ColorDialog\ColorDialog.xaml.cs">
+      <DependentUpon>ColorDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\ColorDialog\ColorDialogFlyout.xaml.cs">
+      <DependentUpon>ColorDialogFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\ColorDialog\HsbConvert.cs" />
+    <Compile Include="winrt\winhab\ColorDialog\HSVConv.cs" />
+    <Compile Include="winrt\winhab\communication\connectiontypes\ConnectionTypesEnum.cs" />
+    <Compile Include="winrt\winhab\communication\httpclient\get\GetJson.cs" />
+    <Compile Include="winrt\winhab\communication\httpclient\post\PostMessage.cs" />
+    <Compile Include="winrt\winhab\communication\imageCacheControlManager\ImageCacheManager.cs" />
+    <Compile Include="winrt\winhab\ErrorManager\ErrorLogger.cs" />
+    <Compile Include="winrt\winhab\ErrorManager\ErrorVisualizer.cs" />
+    <Compile Include="winrt\winhab\FirstStart\ConfigureFirstStart.xaml.cs">
+      <DependentUpon>ConfigureFirstStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\GroupSelectors\ListGroupStyleSelector.cs" />
+    <Compile Include="winrt\winhab\logviewer\LogViewManager.xaml.cs">
+      <DependentUpon>LogViewManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\linkable\IFrameWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\linkable\IGroupWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\linkable\IImageWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\linkable\ITextWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\IChartWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\IColorWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\INumberWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\IRollershutterWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\ISelectionWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\ISetpointWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\ISliderWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\ISwitchWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\IVideoWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\nonlinkable\IWebViewWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openhab_Interfaces\AbstractWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\IAbstractWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_LinkableWidget\FrameWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_LinkableWidget\GroupWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_LinkableWidget\ImageWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_LinkableWidget\TextWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\ChartWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\ColorWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\ContactWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\ListWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\NumberWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\RollershutterWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\SelectionWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\SetpointWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\SliderWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\SwitchWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\VideoWidget.cs" />
+    <Compile Include="winrt\winhab\openHAB_definition\openHAB_Widgets\openHAB_NonLinkableWidget\WebViewWidget.cs" />
+    <Compile Include="winrt\winhab\other\AppProperties.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\IHomepage.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\IItem.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\IJsonOpenHABDataContract.cs" />
+    <Compile Include="winrt\winhab\Parser\IJsonSerializer.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\ILinkedPage.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\IMapping.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\ISitemap.cs" />
+    <Compile Include="winrt\winhab\Parser\interfaces\IWidget.cs" />
+    <Compile Include="winrt\winhab\Parser\JsonOpenHABDataContract.cs" />
+    <Compile Include="winrt\winhab\Parser\JsonRefractor.cs" />
+    <Compile Include="winrt\winhab\Parser\JsonSerializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="winrt\winhab\SettingsManager\SecuritySettingsFlyout.xaml.cs">
+      <DependentUpon>SecuritySettingsFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\SettingsManager\Settings.cs" />
+    <Compile Include="winrt\winhab\SettingsManager\WinHABSettingsFlyout.xaml.cs">
+      <DependentUpon>WinHABSettingsFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winrt\winhab\TemplateSelectoren\LeftNavItemTemplateSelector.cs" />
+    <Compile Include="winrt\winhab\TemplateSelectoren\MainNavItemTemplateSelector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\30x30.png" />
+    <Content Include="Assets\50x50.png" />
+    <Content Include="Assets\620x300.png" />
+    <Content Include="Assets\hasChildren.png" />
+    <Content Include="Assets\images\app-icon.png" />
+    <Content Include="Assets\images\colordialog\Wheel1.png" />
+    <Content Include="Assets\images\icon.png" />
+    <Content Include="Assets\images\icon64x64.png" />
+    <Content Include="Assets\images\splash-ipad-h.png" />
+    <Content Include="Assets\images\splash-ipad-v.png" />
+    <Content Include="Assets\images\splash-iphone.png" />
+    <Content Include="Assets\images\splash-iphone4.png" />
+    <Content Include="Assets\images\splash-winrt-h.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\logo_fhkoeln_sw.jpg" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\Unbenannt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="winrt\winhab\about\AboutUs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\ColorDialog\ColorDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\ColorDialog\ColorDialogFlyout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\FirstStart\ConfigureFirstStart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\logviewer\LogViewManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winrt\winhab\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\SettingsManager\SecuritySettingsFlyout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="winrt\winhab\SettingsManager\WinHABSettingsFlyout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

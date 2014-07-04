@@ -1,0 +1,1 @@
+C:\CSharp_Projekte\openHAB\openHAB\openHAB.csproj;neutral
